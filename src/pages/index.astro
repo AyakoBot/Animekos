@@ -1,0 +1,675 @@
+---
+import Layout from "../layouts/main.astro";
+import { Image } from "astro:assets";
+
+import Flower from "/public/assets/flower.svg";
+import Support from "/public/assets/support.webp";
+import Ayako from "/public/assets/ayako.webp";
+
+const guild = await fetch(
+ "https://discord.com/api/v10/invites/wjGas6FB?with_counts=true"
+).then((res) =>
+ res.ok
+  ? res.json()
+  : { approximate_member_count: 67000, approximate_presence_count: 20000 }
+);
+
+const splitByThousand = (num: number): string => {
+ const str = Math.round(num).toString();
+ const len = str.length;
+ if (len <= 3) return str;
+ return `${splitByThousand(parseInt(str.slice(0, len - 3), 10))},${str.slice(len - 3)}`;
+};
+
+const online = splitByThousand(guild.approximate_presence_count);
+const members = splitByThousand(guild.approximate_member_count);
+---
+
+<Layout>
+
+<section class="m-auto w-70% relative mt-50vh mb-10vh -translate-y-70%">
+ <div class="absolute top-0 left-0">
+  <div class="relative w-125 h-125">
+   <div class="relative z-10">
+    <Image
+     src={Flower}
+     alt=""
+     width="4096"
+     height="4096"
+     class="top-0 left-0 animate-[flower-rotate_240s_linear_infinite]"
+     loading="eager"
+    />
+    <Image
+     src={Flower}
+     alt=""
+     width="4096"
+     height="4096"
+     class="top-0 left-0 animate-[flower-rotate_240s_linear_infinite] absolute blur-10px"
+     loading="eager"
+    />
+   </div>
+   <div
+    class="before:bg-gradient-to-r before:from-transparent before:to-[#18181b] before:content-empty before:absolute before:-top-5% before:-left-5% before:w-110% before:h-110% absolute top-0 left-0 w-110% h-110% z-20"
+   >
+   </div>
+  </div>
+ </div>
+
+ <div class="absolute top-50 right-25">
+  <div class="relative w-75 h-75">
+   <div class="relative z-10 rotate-40deg">
+    <Image
+     src={Flower}
+     alt=""
+     width="4096"
+     height="4096"
+     class="top-0 right-0 animate-[flower-rotate_150s_linear_infinite_reverse]"
+     loading="eager"
+    />
+    <Image
+     src={Flower}
+     alt=""
+     width="4096"
+     height="4096"
+     class="top-0 right-0 animate-[flower-rotate_150s_linear_infinite_reverse] absolute blur-10px"
+     loading="eager"
+    />
+   </div>
+   <div
+    class="before:bg-gradient-to-lt before:from-transparent before:to-[#18181b] before:content-[''] before:absolute before:-top-5% before:-left-5% before:w-110% before:h-110% absolute top-0 left-0 w-110% h-110% z-20"
+   >
+   </div>
+  </div>
+ </div>
+
+ <div class="flex flex-col justify-center items-center">
+  <div
+   class="font-['Ayar_Juno'] text-30 mt-40 z-100 text-shadow-[0_0_20px] color-[#fecada]"
+  >
+   ANIMEKOS
+  </div>
+  <div class="font-['Ayar_Juno'] text-8 z-100 -mt-5 color-[#fecada]">
+   art, anime, and friends
+  </div>
+  <div
+   class="flex flex-row justify-evenly items-center gap-10 text-4 color-neutral-4 z-100 mt-5"
+  >
+   <div>
+    <span class="text-3">🟢</span><span id="online">{online} online</span>
+   </div>
+   <div>
+    <span class="text-3">⚫</span><span id="members">{members} members</span>
+   </div>
+  </div>
+
+  <div class="relative z-40">
+   <a
+    target="_blank"
+    href="https://discord.gg/wjGas6FB"
+    class="text-15 z-100 mt-10 inline-flex relative flex items-center justify-center hover:scale-105 transition-all duration-300 ease-in-out
+       after:content-empty after:h-full after:w-full after:absolute after:bottom-0 after:z-99 after:animate-[gradient_8s_linear_infinite] after:filter-blur-1.5rem after:[background-image:conic-gradient(from_var(--angle),#423dfc,#4b4bfc,#d4a1c1,#ff52a8,#4dc6ff,#423dfc)]"
+    style="--angle: 0deg;"
+   >
+    <div
+     class="z-100 absolute top-0 left-0 w-full h-full
+       after:content-empty after:h-full after:w-full after:absolute after:bottom-0 after:z-99 after:animate-[gradient_8s_linear_infinite] after:[background-image:conic-gradient(from_var(--angle),#423dfc,#4b4bfc,#d4a1c1,#ff52a8,#4dc6ff,#423dfc)]"
+     style="--angle: 0deg;"
+    >
+    </div>
+    <span
+     class="inline-flex h-full w-full cursor-pointer items-center justify-center bg-[#18181b] backdrop-blur-3xl px-4 color-slate-4 border-slate-4 border-solid border-4px z-100 m-2px"
+    >
+     JOIN NOW
+    </span>
+   </a>
+  </div>
+ </div>
+</section>
+
+<section class="mx-0 color-[#fecada]">
+ <div
+  class="flex w-full m-auto of-hidden relative
+     after:content-empty after:h-300px after:absolute after:w-200px after:z-2 after:right-0 after:top-0 after:rotate-z-180deg after:w-full after:bg-[linear-gradient(90deg,rgba(24,24,27,1)_0%,rgba(20,20,54,0)_14%,rgba(23,23,31,0)_86%,rgba(24,24,27,1)_100%)]
+      before:content-empty before:h-300px before:absolute before:w-200px before:z-2 before:left-0 before:top-0 before:w-full before:bg-[linear-gradient(90deg,rgba(24,24,27,1)_0%,rgba(20,20,54,0)_14%,rgba(23,23,31,0)_86%,rgba(24,24,27,1)_100%)]"
+ >
+  <div
+   class="flex animate-[scroll_80s_linear_infinite] w-[calc(var(--slide-width)*var(--slide-count))]"
+  >
+   <div
+    class="h-300px w-[var(--slide-width)] px-10 gap-5 flex flex-col items-start justify-start"
+   >
+    <span class="text-7 text-shadow-[1px_1px_3px_#fecada]">Ayako Support</span>
+    <p class="text-5">
+     In case you need help with our globally available server mascot bot, Ayako.
+     You're in the right place
+    </p>
+   </div>
+   <div
+    class="h-300px w-[var(--slide-width)] px-10 gap-5 flex flex-col items-start justify-start"
+   >
+    <span class="text-7 text-shadow-[1px_1px_3px_#fecada]">Active Chats</span>
+    <p class="text-5">
+     5,000 - 10,000 messages sent per day<br />Members from 20+ countries<br
+     />Activity rewarded with Nitro & server perks
+    </p>
+   </div>
+   <div
+    class="h-300px w-[var(--slide-width)] px-10 gap-5 flex flex-col items-start justify-start"
+   >
+    <span class="text-7 text-shadow-[1px_1px_3px_#fecada]">Sharing art</span>
+    <p class="text-5">
+     Promote your works and comissions<br />Advertise yourself as an artist<br
+     />Look for feedback and help from our vast community and other artists
+    </p>
+   </div>
+   <div
+    class="h-300px w-[var(--slide-width)] px-10 gap-5 flex flex-col items-start justify-start"
+   >
+    <span class="text-7 text-shadow-[1px_1px_3px_#fecada]">Gacha bots</span>
+    <p class="text-5">
+     Avtive Mudae community with half-yearly resets<br />Other game bots include
+     PokéTwo, Karuta, Waifugami, OwO and Sofi
+    </p>
+   </div>
+   <div
+    class="h-300px w-[var(--slide-width)] px-10 gap-5 flex flex-col items-start justify-start"
+   >
+    <span class="text-7 text-shadow-[1px_1px_3px_#fecada]"
+     >Grow your own community</span
+    >
+    <p class="text-5">
+     Reach level 5 and advertise your own server in our advertisements channel
+    </p>
+   </div>
+   <div
+    class="h-300px w-[var(--slide-width)] px-10 gap-5 flex flex-col items-start justify-start"
+   >
+    <span class="text-7 text-shadow-[1px_1px_3px_#fecada]">Ayako Support</span>
+    <p class="text-5">
+     In case you need help with our globally available server mascot bot, Ayako.
+     You're in the right place
+    </p>
+   </div>
+   <div
+    class="h-300px w-[var(--slide-width)] px-10 gap-5 flex flex-col items-start justify-start"
+   >
+    <span class="text-7 text-shadow-[1px_1px_3px_#fecada]">Active Chats</span>
+    <p class="text-5">
+     5,000 - 10,000 messages sent per day<br />Members from 20+ countries<br
+     />Activity rewarded with Nitro & server perks
+    </p>
+   </div>
+   <div
+    class="h-300px w-[var(--slide-width)] px-10 gap-5 flex flex-col items-start justify-start"
+   >
+    <span class="text-7 text-shadow-[1px_1px_3px_#fecada]">Sharing art</span>
+    <p class="text-5">
+     Promote your works and comissions<br />Artist can seek help and feedback
+     from our vast community and other artists
+    </p>
+   </div>
+   <div
+    class="h-300px w-[var(--slide-width)] px-10 gap-5 flex flex-col items-start justify-start"
+   >
+    <span class="text-7 text-shadow-[1px_1px_3px_#fecada]">Gacha bots</span>
+    <p class="text-5">
+     Avtive Mudae community with half-yearly resets<br />Other game bots include
+     PokéTwo, Karuta, Waifugami, OwO and Sofi
+    </p>
+   </div>
+   <div
+    class="h-300px w-[var(--slide-width)] px-10 gap-5 flex flex-col items-start justify-start"
+   >
+    <span class="text-7 text-shadow-[1px_1px_3px_#fecada]"
+     >Grow your own community</span
+    >
+    <p class="text-5">
+     Reach level 5 and advertise your own server in our advertisements channel
+    </p>
+   </div>
+  </div>
+ </div>
+
+ <div
+  class="flex w-full m-auto of-hidden relative
+    after:content-empty after:h-300px after:absolute after:w-200px after:z-2 after:right-0 after:top-0 after:rotate-z-180deg after:w-full after:bg-[linear-gradient(90deg,rgba(24,24,27,1)_0%,rgba(20,20,54,0)_14%,rgba(23,23,31,0)_86%,rgba(24,24,27,1)_100%)]
+     before:content-empty before:h-300px before:absolute before:w-200px before:z-2 before:left-0 before:top-0 before:w-full before:bg-[linear-gradient(90deg,rgba(24,24,27,1)_0%,rgba(20,20,54,0)_14%,rgba(23,23,31,0)_86%,rgba(24,24,27,1)_100%)]"
+ >
+  <div
+   class="flex animate-[scroll_80s_linear_infinite_reverse] w-[calc(var(--slide-width)*var(--slide-count))]"
+  >
+   <div
+    class="h-300px w-[var(--slide-width)] px-10 gap-5 flex flex-col items-start justify-start"
+   >
+    <span class="text-7 text-shadow-[1px_1px_3px_#fecada]"
+     >Cozy Society network</span
+    >
+    <p class="text-5">
+     We're part of the Cozy Society Network, which means you get access to
+     competitions and events with monetary prizes hosted across our network of
+     servers!
+    </p>
+   </div>
+   <div
+    class="h-300px w-[var(--slide-width)] px-10 gap-5 flex flex-col items-start justify-start"
+   >
+    <span class="text-7 text-shadow-[1px_1px_3px_#fecada]"
+     >Weekly giveaways</span
+    >
+    <p class="text-5">
+     Reach level 5 and enter our weekly lotteries for Steam games and Discord
+     Nitro!
+    </p>
+   </div>
+   <div
+    class="h-300px w-[var(--slide-width)] px-10 gap-5 flex flex-col items-start justify-start"
+   >
+    <span class="text-7 text-shadow-[1px_1px_3px_#fecada]">Earn Nitro</span>
+    <p class="text-5">
+     After reaching a certain level you will be rewarded with yearly Nitro
+     subscriptions
+    </p>
+   </div>
+   <div
+    class="h-300px w-[var(--slide-width)] px-10 gap-5 flex flex-col items-start justify-start"
+   >
+    <span class="text-7 text-shadow-[1px_1px_3px_#fecada]"
+     >440+ Nitro Emojis</span
+    >
+    <p class="text-5">Express yourself with our massive collection of emojis</p>
+   </div>
+   <div
+    class="h-300px w-[var(--slide-width)] px-10 gap-5 flex flex-col items-start justify-start"
+   >
+    <span class="text-7 text-shadow-[1px_1px_3px_#fecada]"
+     >60 Nitro Stickers</span
+    >
+    <p class="text-5">
+     Cute little stickers featuring Kemonomimi-chan, Ayako and other adorable
+     characters
+    </p>
+   </div>
+   <div
+    class="h-300px w-[var(--slide-width)] px-10 gap-5 flex flex-col items-start justify-start"
+   >
+    <span class="text-7 text-shadow-[1px_1px_3px_#fecada]"
+     >Cozy Society network</span
+    >
+    <p class="text-5">
+     We're part of the Cozy Society Network, which means you get access to
+     competitions and events with monetary prizes hosted across our network of
+     servers!
+    </p>
+   </div>
+   <div
+    class="h-300px w-[var(--slide-width)] px-10 gap-5 flex flex-col items-start justify-start"
+   >
+    <span class="text-7 text-shadow-[1px_1px_3px_#fecada]"
+     >Weekly giveaways</span
+    >
+    <p class="text-5">
+     Reach level 5 and enter our weekly lotteries for Steam games and Discord
+     Nitro!
+    </p>
+   </div>
+   <div
+    class="h-300px w-[var(--slide-width)] px-10 gap-5 flex flex-col items-start justify-start"
+   >
+    <span class="text-7 text-shadow-[1px_1px_3px_#fecada]">Earn Nitro</span>
+    <p class="text-5">
+     After reaching a certain level you will be rewarded with yearly Nitro
+     subscriptions
+    </p>
+   </div>
+   <div
+    class="h-300px w-[var(--slide-width)] px-10 gap-5 flex flex-col items-start justify-start"
+   >
+    <span class="text-7 text-shadow-[1px_1px_3px_#fecada]"
+     >440+ Nitro Emojis</span
+    >
+    <p class="text-5">Express yourself with our massive collection of emojis</p>
+   </div>
+   <div
+    class="h-300px w-[var(--slide-width)] px-10 gap-5 flex flex-col items-start justify-start"
+   >
+    <span class="text-7 text-shadow-[1px_1px_3px_#fecada]"
+     >60 Nitro Stickers</span
+    >
+    <p class="text-5">
+     Cute little stickers featuring Kemonomimi-chan, Ayako and other adorable
+     characters
+    </p>
+   </div>
+  </div>
+ </div>
+</section>
+
+<section class="color-[#fecada] relative mt-50">
+ <div class="absolute z-20">
+  <div class="relative">
+   <div class="relative z-10">
+    <Image
+     src={Flower}
+     alt=""
+     width="4096"
+     height="4096"
+     class="w-75 h-auto -mt-30 ml-5 animate-[flower-rotate_240s_linear_infinite] color-[#fecada]"
+     loading="eager"
+    />
+    <Image
+     src={Flower}
+     alt=""
+     width="4096"
+     height="4096"
+     class="w-75 h-auto top-0 left-5 animate-[flower-rotate_240s_linear_infinite] blur-10px color-[#fecada] absolute"
+     loading="eager"
+    />
+   </div>
+   <div
+    class="before:bg-gradient-to-rb before:from-transparent before:to-[rgba(24,24,27,1)] before:via-[rgba(24,24,27,0.9)] before:content-[''] before:absolute before:-top-5% before:-left-5% before:w-110% before:h-110% absolute top-0 left-0 w-110% h-110% z-20"
+   >
+   </div>
+  </div>
+ </div>
+
+ <div class="z-100 px-40 flex flex-col justify-start items-start">
+  <span class="text-10 z-100">
+   Need an multi-purpose bot for your own server?
+   <br class="my-5" />
+   Meet Ayako!
+  </span>
+  <div class="flex flex-row justify-between items-start gap-10 z-100">
+   <div class="w-1/2 text-5 mt-10">
+    Streamlined server management, extensive customization options, enhanced
+    community engagement, in-depth information tools, customizable branding,
+    100% free.
+    <br class="mb-10" />
+    <a
+     target="_blank"
+     href="https://ayakobot.com"
+     class="bg-gradient-to-r via-white from-[#fecada] to-[#fecada] bg-[length:200%] bg-repeat-x m-auto text-fill-color hover:bg-[position:100%_center] transition-all duration-300 ease-in-out bg-clip-text text-fill-color relative
+      before:bg-gradient-to-r before:via-white before:from-[#fecada] before:to-[#fecada] before:bg-[length:200%] before:bg-repeat-x before:m-auto before:text-fill-color before:hover:bg-[position:100%_center] before:transition-all before:duration-300 before:ease-in-out before:bg-clip-text before:text-fill-color before:content-['Learn_more'] before:absolute before:blur-5px"
+    >
+     Learn more
+    </a>
+    <br class="mb-5" />
+    Animekos provides Ayako support<br />Talk directly to the developer, make
+    suggestions and resolve your issues!
+   </div>
+
+   <div class="w-1/2 relative">
+    <Image
+     src={Support}
+     alt="Support Channel"
+     class="rounded-50px h-auto -mt-10"
+     width="4096"
+     height="4096"
+     loading="eager"
+    />
+    <Image
+     src={Ayako}
+     alt=""
+     class="absolute bottom-0 right-10 w-30"
+     width="4096"
+     height="4096"
+     loading="eager"
+    />
+   </div>
+  </div>
+ </div>
+</section>
+
+<section
+ class="mt-60 m-auto flex flex-col justify-center items-center relative"
+>
+ <div class="p-10 relative w-full -ml-40 color-[#fecada]">
+  <div class="text-center text-7 text-shadow-[0_0_5px_#fecada]">
+   One click away from meeting someone who loves
+   <div class="inline indent-8px">
+    <span
+     class="op-0 of-hidden absolute animate-[topToBottom_30s_linear_infinite_-15s]"
+     >gacha games.</span
+    >
+    <span
+     class="op-0 of-hidden absolute animate-[topToBottom_30s_linear_infinite_-12.5s]"
+     >art.</span
+    >
+    <span
+     class="op-0 of-hidden absolute animate-[topToBottom_30s_linear_infinite_-10s]"
+     >loafing.</span
+    >
+    <span
+     class="op-0 of-hidden absolute animate-[topToBottom_30s_linear_infinite_-7.5s]"
+     >gaming.</span
+    >
+    <span
+     class="op-0 of-hidden absolute animate-[topToBottom_30s_linear_infinite_-5s]"
+     >music.</span
+    >
+    <span
+     class="op-0 of-hidden absolute animate-[topToBottom_30s_linear_infinite_-2.5s]"
+     >photography.</span
+    >
+    <span
+     class="op-0 of-hidden absolute animate-[topToBottom_30s_linear_infinite_0s]"
+     >lofi.</span
+    >
+    <span
+     class="op-0 of-hidden absolute animate-[topToBottom_30s_linear_infinite_2.5s]"
+     >minecraft.</span
+    >
+    <span
+     class="op-0 of-hidden absolute animate-[topToBottom_30s_linear_infinite_5s]"
+     >chatting.</span
+    >
+    <span
+     class="op-0 of-hidden absolute animate-[topToBottom_30s_linear_infinite_7.5s]"
+     >anime.</span
+    >
+    <span
+     class="op-0 of-hidden absolute animate-[topToBottom_30s_linear_infinite_10s]"
+     >painting.</span
+    >
+    <span
+     class="op-0 of-hidden absolute animate-[topToBottom_30s_linear_infinite_12.5s]"
+     >genshin.</span
+    >
+   </div>
+  </div>
+ </div>
+
+ <a
+  target="_blank"
+  href="https://discord.gg/wjGas6FB"
+  class="text-6 z-100 inline-flex relative flex items-center justify-center hover:scale-105 transition-all duration-300 ease-in-out
+    after:content-empty after:h-full after:w-full after:rounded-full after:absolute after:bottom-0 after:z-99 after:animate-[gradient_8s_linear_infinite] after:filter-blur-1.5rem after:[background-image:conic-gradient(from_var(--angle),#ff2190,#fca4e5,#ffc2fb,#7aedff,#544aff,#ff2190)]"
+  style="--angle: 0deg;"
+ >
+  <div
+   class="z-100 absolute top-0 left-0 w-full h-full
+    after:content-empty after:h-full after:w-full after:rounded-full after:absolute after:bottom-0 after:z-99 after:animate-[gradient_8s_linear_infinite] after:[background-image:conic-gradient(from_var(--angle),#ff2190,#fca4e5,#ffc2fb,#7aedff,#544aff,#544aff,#ff2190)]"
+   style="--angle: 0deg;"
+  >
+  </div>
+  <span
+   class="inline-flex h-full w-full cursor-pointer items-center justify-center bg-[#18181b] backdrop-blur-3xl px-4 color-white z-100 m-2px rounded-full"
+  >
+   <span
+    class="bg-gradient-to-r via-white from-[#fecada] to-[#fecada] bg-[length:200%] bg-repeat-x m-auto p-1 text-fill-color hover:bg-[position:100%_center] transition-all duration-300 ease-in-out bg-clip-text text-fill-color relative
+  before:bg-gradient-to-r before:via-white before:from-[#fecada] before:to-[#fecada] before:bg-[length:200%] before:bg-repeat-x before:m-auto before:text-fill-color before:hover:bg-[position:100%_center] before:transition-all before:duration-300 before:ease-in-out before:bg-clip-text before:text-fill-color before:content-['Join_us'] before:absolute before:blur-5px"
+   >
+    Join us
+   </span>
+  </span>
+ </a>
+
+ <Image
+  src={Flower}
+  alt=""
+  width="4096"
+  height="4096"
+  loading="eager"
+  class="color-[#fecada] animate-[flower-rotate_160s_linear_infinite] absolute w-20 h-auto -top-15 right-150 rotate-30deg blur-10px"
+ />
+ <Image
+  src={Flower}
+  alt=""
+  width="4096"
+  height="4096"
+  loading="eager"
+  class="color-[#fecada] animate-[flower-rotate_160s_linear_infinite] absolute w-20 h-auto -top-15 right-150 rotate-30deg"
+ />
+ <Image
+  src={Flower}
+  alt=""
+  width="4096"
+  height="4096"
+  loading="eager"
+  class="color-[#fecada] animate-[flower-rotate_200s_linear_infinite_reverse] absolute w-20 h-auto bottom-0 left-125 rotate-20deg blur-10px"
+ />
+ <Image
+  src={Flower}
+  alt=""
+  width="4096"
+  height="4096"
+  loading="eager"
+  class="color-[#fecada] animate-[flower-rotate_200s_linear_infinite_reverse] absolute w-20 h-auto bottom-0 left-125 rotate-20deg"
+ />
+ <Image
+  src={Flower}
+  alt=""
+  width="4096"
+  height="4096"
+  loading="eager"
+  class="color-[#fecada] animate-[flower-rotate_240s_linear_infinite] absolute w-13 h-auto left-60 bottom-20 rotate-15deg blur-10px"
+ />
+ <Image
+  src={Flower}
+  alt=""
+  width="4096"
+  height="4096"
+  loading="eager"
+  class="color-[#fecada] animate-[flower-rotate_240s_linear_infinite] absolute w-13 h-auto left-60 bottom-20 rotate-15deg"
+ />
+ <Image
+  src={Flower}
+  alt=""
+  width="4096"
+  height="4096"
+  loading="eager"
+  class="color-[#fecada] animate-[flower-rotate_180s_linear_infinite_reverse] absolute w-13 h-auto bottom-5 right-142 rotate-10deg blur-10px"
+ />
+ <Image
+  src={Flower}
+  alt=""
+  width="4096"
+  height="4096"
+  loading="eager"
+  class="color-[#fecada] animate-[flower-rotate_180s_linear_infinite_reverse] absolute w-13 h-auto bottom-5 right-142 rotate-10deg"
+ />
+</section>
+
+<style>
+ :root {
+  --slide-width: 500px;
+  --slide-count: 10;
+ }
+
+ @font-face {
+  font-family: "Ayar Juno";
+  src:
+   url("fonts/Ayar_Juno/Ayar_juno.eot?") format("eot"),
+   url("fonts/Ayar_Juno/Ayar_juno.woff") format("woff"),
+   url("fonts/Ayar_Juno/Ayar_juno.ttf") format("truetype"),
+   url("fonts/Ayar_Juno/Ayar_juno.svg#AyarJuno") format("svg");
+  font-weight: normal;
+  font-style: normal;
+ }
+
+ @font-face {
+  font-family: "Weezer";
+  src:
+   url("fonts/Weezer/WeezerFont.eot?") format("eot"),
+   url("fonts/Weezer/WeezerFont.svg#WeezerFont") format("svg"),
+   url("fonts/Weezer/WeezerFont.ttf") format("truetype"),
+   url("fonts/Weezer/WeezerFont.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+ }
+
+ @keyframes flower-rotate {
+  from {
+   transform: rotate(0deg);
+  }
+
+  to {
+   transform: rotate(360deg);
+  }
+ }
+
+ @property --angle {
+  syntax: "<angle>";
+  inherits: false;
+  initial-value: 0deg;
+ }
+
+ @keyframes gradient {
+  0% {
+   --angle: 0deg;
+  }
+  100% {
+   --angle: 360deg;
+  }
+ }
+
+ @keyframes scroll {
+  0% {
+   transform: translateX(0);
+  }
+  100% {
+   transform: translateX(
+    calc(calc(var(--slide-width) * -1) * (var(--slide-count) / 2))
+   );
+  }
+ }
+
+ @keyframes gradient-move {
+  0% {
+   background-position: 0%;
+  }
+  100% {
+   background-position: 200%;
+  }
+ }
+
+ @keyframes topToBottom {
+  40% {
+   transform: translateY(-40px);
+   text-shadow: 0 0 0px #fecada;
+  }
+  45% {
+   transform: translateY(-40px);
+   opacity: 0;
+  }
+  47% {
+   opacity: 1;
+   transform: translateY(0px);
+   text-shadow: 0 0 5px #fecada;
+  }
+  53.3% {
+   opacity: 1;
+   transform: translateY(0px);
+   text-shadow: 0 0 5px #fecada;
+  }
+  55.3% {
+   opacity: 0;
+   transform: translateY(40px);
+  }
+  60.3% {
+   transform: translateY(40px);
+   text-shadow: 0 0 0px #fecada;
+  }
+ }
+</style>
+
+</Layout>
