@@ -1,8 +1,8 @@
 ---
-const { content } = Astro.props;
-import { Image } from "astro:assets";
-
-import Icon from "/public/assets/kimono.webp";
+import Style from "../components/style.astro";
+import Nav from "../components/nav.astro";
+import Footer from "../components/footer.astro";
+import EndGradient from "../components/endGradient.astro";
 ---
 
 <html lang="en">
@@ -15,104 +15,17 @@ import Icon from "/public/assets/kimono.webp";
  </head>
  <body class="of-x-hidden flex flex-col max-w-100vw bg-[#18181b] color-white">
   <div class="font-['Weezer'] relative flex flex-col w-100vw">
-   <!-- <nav
-    class="flex flex-row justify-between items-center font-size-7 mt-10 ml-8"
-   >
-    <div class="flex flex-row items-center justify-start gap-5 text-5">
-     <Image
-      src={Icon}
-      alt="Server Icon"
-      class="rounded-full w-42px h-42px"
-      width="4096"
-      height="4096"
-      loading="eager"
-     />
-     Animekos | Discord Server
-    </div>
-
-    <div class="flex flex-row items-center justify-evenly gap-15 mr-20 text-5">
-     <a>About Us</a>
-     <a>Features</a>
-     <a>Support</a>
-     <a
-      class="bg-gradient-to-r via-white from-[#fecada] to-[#fecada] bg-[length:200%] bg-repeat-x m-auto text-fill-color hover:bg-[position:100%_center] transition-all duration-300 ease-in-out bg-clip-text text-fill-color relative
-  before:bg-gradient-to-r before:via-white before:from-[#fecada] before:to-[#fecada] before:bg-[length:200%] before:bg-repeat-x before:m-auto before:text-fill-color before:hover:bg-[position:100%_center] before:transition-all before:duration-300 before:ease-in-out before:bg-clip-text before:text-fill-color before:content-['Join'] before:absolute before:blur-5px before:font-bold"
-     >
-      Join
-     </a>
-    </div>
-   </nav> -->
+   <Nav />
 
    <main class="bg-transparent">
     <slot />
    </main>
 
-   <!-- <footer class="flex flex-row justify-between items-end m-20 mb-10 z-10">
-    <div class="flex flex-col justify-evenly items-start color-[#fecada]">
-     <span class="text-7">ANIMEKOS</span>
-     <span class="text-5 mb-10"
-      >Discord Server<br /><a target="_blank" href="https://discord.gg/wjGas6FB"
-       >discord.gg/animekos</a
-      ></span
-     >
-     <span class="text-3.5"
-      >Owned by a.lilac and lars_und_so<br />Copyright {
-       new Date().getFullYear()
-      }.</span
-     >
-    </div>
+   <Footer />
 
-    <div class="flex flex-row justify-start items-start gap-10 text-5">
-     <div class="flex flex-col justify-center items-start">
-      <a
-       target="_blank"
-       href="https://ayakobot.com/guilds/298954459172700181/appeals"
-       >Ban Appeal</a
-      >
-      <a href="/privacy">Privacy Policy</a>
-     </div>
+   <EndGradient />
 
-     <div class="flex flex-col justify-center items-start">
-      <a href="/boost">Booster Perks</a>
-      <a target="_blank" href="https://www.patreon.com/Lars_und_so">Patreon</a>
-      <a href="/partners">Partners</a>
-     </div>
-    </div>
-   </footer> -->
-<!-- 
-   <div
-    class="before:content-empty before:h-10% before:w-150% before:-left-25% before:absolute before:-bottom-10 before:-z-30 before:bg-[linear-gradient(90deg,rgba(255,125,241,1)_0%,rgba(254,202,230,1)_10%,rgba(92,185,254,1)_30%,rgba(92,254,211,1)_50%,rgba(181,232,185,1)_70%,rgba(254,171,92,1)_90%,rgba(255,125,241,1)_100%)] before:bg-repeat-x before:animate-[gradient-move_8s_linear_infinite] before:bg-[length:200%]
- left-0 w-full h-full absolute -bottom-20 -z-50 of-hidden"
-   >
-   </div>
-   <div
-    class="content-empty h-10% w-98% left-1% absolute -bottom-15 -z-20 bg-[#18181b]"
-   >
-   </div>
-   <div
-    class="content-empty h-50% w-10% right-0 absolute bottom-10 -z-20 bg-[#18181b]"
-   >
-   </div>
-   <div
-    class="content-empty h-20% w-100% left-0 absolute -bottom-20 -z-10 backdrop-blur-20px backdrop-filter"
-   >
-   </div>
-   <div
-    class="content-empty h-20% w-100% left-0 absolute -bottom-20 -z-10 backdrop-blur-30px backdrop-filter"
-   >
-   </div>
-   <div
-    class="content-empty h-20% w-100% left-0 absolute -bottom-20 -z-10 backdrop-blur-10px backdrop-filter"
-   >
-   </div>
-   <div
-    class="content-empty h-20% w-100% left-0 absolute -bottom-20 -z-10 backdrop-blur-10px backdrop-filter"
-   >
-   </div>
-   <div
-    class="content-empty h-20% w-100% left-0 absolute -bottom-20 -z-10 backdrop-blur-10px backdrop-filter"
-   >
-   </div> -->
+   <Style />
   </div>
  </body>
 </html>

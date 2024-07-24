@@ -1,0 +1,83 @@
+---
+import { Image } from "astro:assets";
+
+import Support from "/public/assets/support.webp";
+import Emote from "/public/assets/ayako.webp";
+import Flower from "/public/assets/flower.svg";
+---
+
+
+<section class="color-[#fecada] relative mt-50">
+ <div class="absolute z-20">
+  <div class="relative">
+   <div class="relative z-10">
+    <Image
+     src={Flower}
+     alt=""
+     width="4096"
+     height="4096"
+     class="w-75 h-auto -mt-30 -ml-15 lg:ml-5 animate-[flower-rotate_240s_linear_infinite] color-[#fecada]"
+     loading="eager"
+    />
+    <Image
+     src={Flower}
+     alt=""
+     width="4096"
+     height="4096"
+     class="w-75 h-auto top-0 -left-15 lg:left-5 animate-[flower-rotate_240s_linear_infinite] blur-10px color-[#fecada] absolute"
+     loading="eager"
+    />
+   </div>
+   <div
+    class="before:bg-gradient-to-rb before:from-transparent before:to-[rgba(24,24,27,1)] before:via-[rgba(24,24,27,0.9)] before:content-empty before:absolute before:-top-5% before:-left-5% before:w-110% before:h-110% absolute top-0 left-0 w-110% h-110% z-20"
+   >
+   </div>
+  </div>
+ </div>
+
+ <div class="z-100 md:px-10 lg:px-40 flex flex-col justify-start items-start">
+  <span class="text-10 z-100">
+   Need a multi-purpose bot for your own server?
+   <br class="my-5" />
+   Meet Ayako!
+  </span>
+  <div class="flex flex-row flex-wrap-reverse lg:flex-nowrap justify-between items-start gap-0 lg:gap-10 z-100">
+   <div class="w-full lg:w-1/2 text-5 mt-10 flex flex-col gap-5">
+    Streamlined server management, extensive customization options, enhanced
+    community engagement, in-depth information tools, customizable branding,
+    100% free.
+    <br />
+    <a
+     target="_blank"
+     href="https://ayakobot.com"
+     class="bg-gradient-to-r via-white from-[#fecada] to-[#fecada] bg-[length:200%] bg-repeat-x text-fill-color hover:bg-[position:100%_center] transition-all duration-300 ease-in-out bg-clip-text text-fill-color relative
+     before:bg-gradient-to-r before:via-white before:from-[#fecada] before:to-[#fecada] before:bg-[length:200%] before:bg-repeat-x before:m-auto before:text-fill-color before:hover:bg-[position:100%_center] before:transition-all before:duration-300 before:ease-in-out before:bg-clip-text before:text-fill-color before:content-['Learn_more'] before:absolute before:blur-5px"
+    >
+     Learn more
+    </a>
+    <br />
+    Animekos provides Ayako support<br />Talk directly to the developer, make
+    suggestions and resolve your issues!
+   </div>
+
+   <div class="w-full lg:w-1/2 relative mt-5 lg:mt-0">
+    <Image
+     src={Support}
+     alt="Support Channel"
+     class="rounded-50px h-auto lg:-mt-10"
+     width="4096"
+     height="4096"
+     loading="eager"
+    />
+    <Image
+     src={Emote}
+     alt=""
+     class="absolute bottom-0 right-10 w-30"
+     width="4096"
+     height="4096"
+     loading="eager"
+    />
+   </div>
+  </div>
+ </div>
+</section>

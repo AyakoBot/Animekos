@@ -1,0 +1,32 @@
+---
+import { Image } from "astro:assets";
+import Icon from "/public/assets/kimono.webp";
+---
+
+<nav
+class="flex flex-row justify-between items-center font-size-7 mt-10 ml-8"
+>
+<div class="flex flex-row items-center justify-start gap-5 text-5">
+ <Image
+  src={Icon}
+  alt="Server Icon"
+  class="rounded-full w-42px h-42px"
+  width="4096"
+  height="4096"
+  loading="eager"
+ />
+ Animekos | Discord Server
+</div>
+
+<div class="flex flex-row items-center justify-evenly gap-15 mr-20 text-5">
+ <a>About Us</a>
+ <a>Features</a>
+ <a>Support</a>
+ <a
+  class="bg-gradient-to-r via-white from-[#fecada] to-[#fecada] bg-[length:200%] bg-repeat-x m-auto text-fill-color hover:bg-[position:100%_center] transition-all duration-300 ease-in-out bg-clip-text text-fill-color relative
+before:bg-gradient-to-r before:via-white before:from-[#fecada] before:to-[#fecada] before:bg-[length:200%] before:bg-repeat-x before:m-auto before:text-fill-color before:hover:bg-[position:100%_center] before:transition-all before:duration-300 before:ease-in-out before:bg-clip-text before:text-fill-color before:content-['Join'] before:absolute before:blur-5px before:font-bold"
+ >
+  Join
+ </a>
+</div>
+</nav>

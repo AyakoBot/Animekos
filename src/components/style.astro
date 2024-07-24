@@ -1,0 +1,102 @@
+<style>
+ :root {
+  --slide-width: 500px;
+  --slide-count: 10;
+ }
+
+ @font-face {
+  font-family: "Ayar Juno";
+  src:
+   url("fonts/Ayar_Juno/Ayar_juno.eot?") format("eot"),
+   url("fonts/Ayar_Juno/Ayar_juno.woff") format("woff"),
+   url("fonts/Ayar_Juno/Ayar_juno.ttf") format("truetype"),
+   url("fonts/Ayar_Juno/Ayar_juno.svg#AyarJuno") format("svg");
+  font-weight: normal;
+  font-style: normal;
+ }
+
+ @font-face {
+  font-family: "Weezer";
+  src:
+   url("fonts/Weezer/WeezerFont.eot?") format("eot"),
+   url("fonts/Weezer/WeezerFont.svg#WeezerFont") format("svg"),
+   url("fonts/Weezer/WeezerFont.ttf") format("truetype"),
+   url("fonts/Weezer/WeezerFont.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+ }
+
+ @keyframes flower-rotate {
+  from {
+   transform: rotate(0deg);
+  }
+
+  to {
+   transform: rotate(360deg);
+  }
+ }
+
+ @property --angle {
+  syntax: "<angle>";
+  inherits: false;
+  initial-value: 0deg;
+ }
+
+ @keyframes gradient {
+  0% {
+   --angle: 0deg;
+  }
+  100% {
+   --angle: 360deg;
+  }
+ }
+
+ @keyframes scroll {
+  0% {
+   transform: translateX(0);
+  }
+  100% {
+   transform: translateX(
+    calc(calc(var(--slide-width) * -1) * (var(--slide-count) / 2))
+   );
+  }
+ }
+
+ @keyframes gradient-move {
+  0% {
+   background-position: 0%;
+  }
+  100% {
+   background-position: 200%;
+  }
+ }
+
+ @keyframes topToBottom {
+  40% {
+   transform: translateY(-40px);
+   text-shadow: 0 0 0px #fecada;
+  }
+  45% {
+   transform: translateY(-40px);
+   opacity: 0;
+  }
+  47% {
+   opacity: 1;
+   transform: translateY(0px);
+   text-shadow: 0 0 5px #fecada;
+  }
+  53.3% {
+   opacity: 1;
+   transform: translateY(0px);
+   text-shadow: 0 0 5px #fecada;
+  }
+  55.3% {
+   opacity: 0;
+   transform: translateY(40px);
+  }
+  60.3% {
+   transform: translateY(40px);
+   text-shadow: 0 0 0px #fecada;
+  }
+ }
+</style>
