@@ -1,0 +1,19 @@
+---
+interface Props {
+ title: string;
+ description: string;
+}
+
+const { title, description } = Astro.props;
+---
+
+<div
+ class="h-300px w-[var(--slide-width)] px-10 gap-5 flex flex-col items-start justify-start"
+>
+ <span class="text-5 md:text-7 text-shadow-[1px_1px_3px_#fecada]">
+  {title}
+ </span>
+ <p class="text-3 md:text-5">
+  {description}
+ </p>
+</div>

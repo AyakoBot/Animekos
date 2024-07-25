@@ -1,104 +1,69 @@
+---
+import Card from "../card.astro";
+---
+
 <section class="mx-0 color-[#fecada]">
  <div
-  class="flex w-full m-auto of-hidden relative
+  class="flex w-full m-auto of-hidden relative h-200px md:h-unset
     after:content-empty after:h-300px after:absolute after:w-200px after:z-2 after:right-0 after:top-0 after:rotate-z-180deg after:w-full after:bg-[linear-gradient(90deg,rgba(24,24,27,1)_0%,rgba(20,20,54,0)_14%,rgba(23,23,31,0)_86%,rgba(24,24,27,1)_100%)]
      before:content-empty before:h-300px before:absolute before:w-200px before:z-2 before:left-0 before:top-0 before:w-full before:bg-[linear-gradient(90deg,rgba(24,24,27,1)_0%,rgba(20,20,54,0)_14%,rgba(23,23,31,0)_86%,rgba(24,24,27,1)_100%)]"
  >
   <div
    class="flex animate-[scroll_80s_linear_infinite] w-[calc(var(--slide-width)*var(--slide-count))]"
   >
-   <div
-    class="h-300px w-[var(--slide-width)] px-10 gap-5 flex flex-col items-start justify-start"
-   >
-    <span class="text-7 text-shadow-[1px_1px_3px_#fecada]">Ayako Support</span>
-    <p class="text-5">
-     In case you need help with our globally available server mascot bot,
-     Ayako. You're in the right place
-    </p>
-   </div>
-   <div
-    class="h-300px w-[var(--slide-width)] px-10 gap-5 flex flex-col items-start justify-start"
-   >
-    <span class="text-7 text-shadow-[1px_1px_3px_#fecada]">Active Chats</span>
-    <p class="text-5">
-     5,000 - 10,000 messages sent per day<br />Members from 20+ countries<br
-     />Activity rewarded with Nitro & server perks
-    </p>
-   </div>
-   <div
-    class="h-300px w-[var(--slide-width)] px-10 gap-5 flex flex-col items-start justify-start"
-   >
-    <span class="text-7 text-shadow-[1px_1px_3px_#fecada]">Sharing art</span>
-    <p class="text-5">
-     Promote your works and comissions<br />Advertise yourself as an artist<br
-     />Look for feedback and help from our vast community and other artists
-    </p>
-   </div>
-   <div
-    class="h-300px w-[var(--slide-width)] px-10 gap-5 flex flex-col items-start justify-start"
-   >
-    <span class="text-7 text-shadow-[1px_1px_3px_#fecada]">Gacha bots</span>
-    <p class="text-5">
-     Avtive Mudae community with half-yearly resets<br />Other game bots
-     include PokéTwo, Karuta, Waifugami, OwO and Sofi
-    </p>
-   </div>
-   <div
-    class="h-300px w-[var(--slide-width)] px-10 gap-5 flex flex-col items-start justify-start"
-   >
-    <span class="text-7 text-shadow-[1px_1px_3px_#fecada]"
-     >Grow your own community</span
-    >
-    <p class="text-5">
-     Reach level 5 and advertise your own server in our advertisements channel
-    </p>
-   </div>
-   <div
-    class="h-300px w-[var(--slide-width)] px-10 gap-5 flex flex-col items-start justify-start"
-   >
-    <span class="text-7 text-shadow-[1px_1px_3px_#fecada]">Ayako Support</span>
-    <p class="text-5">
-     In case you need help with our globally available server mascot bot,
-     Ayako. You're in the right place
-    </p>
-   </div>
-   <div
-    class="h-300px w-[var(--slide-width)] px-10 gap-5 flex flex-col items-start justify-start"
-   >
-    <span class="text-7 text-shadow-[1px_1px_3px_#fecada]">Active Chats</span>
-    <p class="text-5">
-     5,000 - 10,000 messages sent per day<br />Members from 20+ countries<br
-     />Activity rewarded with Nitro & server perks
-    </p>
-   </div>
-   <div
-    class="h-300px w-[var(--slide-width)] px-10 gap-5 flex flex-col items-start justify-start"
-   >
-    <span class="text-7 text-shadow-[1px_1px_3px_#fecada]">Sharing art</span>
-    <p class="text-5">
-     Promote your works and comissions<br />Artist can seek help and feedback
-     from our vast community and other artists
-    </p>
-   </div>
-   <div
-    class="h-300px w-[var(--slide-width)] px-10 gap-5 flex flex-col items-start justify-start"
-   >
-    <span class="text-7 text-shadow-[1px_1px_3px_#fecada]">Gacha bots</span>
-    <p class="text-5">
-     Avtive Mudae community with half-yearly resets<br />Other game bots
-     include PokéTwo, Karuta, Waifugami, OwO and Sofi
-    </p>
-   </div>
-   <div
-    class="h-300px w-[var(--slide-width)] px-10 gap-5 flex flex-col items-start justify-start"
-   >
-    <span class="text-7 text-shadow-[1px_1px_3px_#fecada]"
-     >Grow your own community</span
-    >
-    <p class="text-5">
-     Reach level 5 and advertise your own server in our advertisements channel
-    </p>
-   </div>
+   <Card
+    title="Ayako Support"
+    description=`5,000 - 10,000 messages sent per day
+   Members from 20+ countries
+   Activity rewarded with Nitro & server perks`
+   />
+   <Card
+    title="Sharing art"
+    description=`Promote your works and comissions
+     Advertise yourself as an artist
+     Look for feedback and help from our vast community and other artists`
+   />
+   <Card
+    title="Gacha bots"
+    description=`Avtive Mudae community with half-yearly resets
+   Other game bots include PokéTwo, Karuta, Waifugami, OwO and Sofi`
+   />
+   <Card
+    title="Grow your own community"
+    description=`Reach level 5 and advertise your own server in our advertisements channel`
+   />
+   <Card
+    title="Ayako Support"
+    description=`In case you need help with our globally available server mascot bot, Ayako.
+   You're in the right place`
+   />
+
+   <Card
+    title="Ayako Support"
+    description=`5,000 - 10,000 messages sent per day
+  Members from 20+ countries
+  Activity rewarded with Nitro & server perks`
+   />
+   <Card
+    title="Sharing art"
+    description=`Promote your works and comissions
+    Advertise yourself as an artist
+    Look for feedback and help from our vast community and other artists`
+   />
+   <Card
+    title="Gacha bots"
+    description=`Avtive Mudae community with half-yearly resets
+  Other game bots include PokéTwo, Karuta, Waifugami, OwO and Sofi`
+   />
+   <Card
+    title="Grow your own community"
+    description=`Reach level 5 and advertise your own server in our advertisements channel`
+   />
+   <Card
+    title="Ayako Support"
+    description=`In case you need help with our globally available server mascot bot, Ayako.
+  You're in the right place`
+   />
   </div>
  </div>
 
@@ -110,112 +75,75 @@
   <div
    class="flex animate-[scroll_80s_linear_infinite_reverse] w-[calc(var(--slide-width)*var(--slide-count))]"
   >
-   <div
-    class="h-300px w-[var(--slide-width)] px-10 gap-5 flex flex-col items-start justify-start"
-   >
-    <span class="text-7 text-shadow-[1px_1px_3px_#fecada]"
-     >Cozy Society network</span
-    >
-    <p class="text-5">
-     We're part of the Cozy Society Network, which means you get access to
+   <Card
+    title="Cozy Society Network"
+    description=`We're part of the Cozy Society Network, which means you get access to
      competitions and events with monetary prizes hosted across our network of
-     servers!
-    </p>
-   </div>
-   <div
-    class="h-300px w-[var(--slide-width)] px-10 gap-5 flex flex-col items-start justify-start"
-   >
-    <span class="text-7 text-shadow-[1px_1px_3px_#fecada]"
-     >Weekly giveaways</span
-    >
-    <p class="text-5">
-     Reach level 5 and enter our weekly lotteries for Steam games and Discord
-     Nitro!
-    </p>
-   </div>
-   <div
-    class="h-300px w-[var(--slide-width)] px-10 gap-5 flex flex-col items-start justify-start"
-   >
-    <span class="text-7 text-shadow-[1px_1px_3px_#fecada]">Earn Nitro</span>
-    <p class="text-5">
-     After reaching a certain level you will be rewarded with yearly Nitro
-     subscriptions
-    </p>
-   </div>
-   <div
-    class="h-300px w-[var(--slide-width)] px-10 gap-5 flex flex-col items-start justify-start"
-   >
-    <span class="text-7 text-shadow-[1px_1px_3px_#fecada]"
-     >440+ Nitro Emojis</span
-    >
-    <p class="text-5">
-     Express yourself with our massive collection of emojis
-    </p>
-   </div>
-   <div
-    class="h-300px w-[var(--slide-width)] px-10 gap-5 flex flex-col items-start justify-start"
-   >
-    <span class="text-7 text-shadow-[1px_1px_3px_#fecada]"
-     >60 Nitro Stickers</span
-    >
-    <p class="text-5">
-     Cute little stickers featuring Kemonomimi-chan, Ayako and other adorable
-     characters
-    </p>
-   </div>
-   <div
-    class="h-300px w-[var(--slide-width)] px-10 gap-5 flex flex-col items-start justify-start"
-   >
-    <span class="text-7 text-shadow-[1px_1px_3px_#fecada]"
-     >Cozy Society network</span
-    >
-    <p class="text-5">
-     We're part of the Cozy Society Network, which means you get access to
-     competitions and events with monetary prizes hosted across our network of
-     servers!
-    </p>
-   </div>
-   <div
-    class="h-300px w-[var(--slide-width)] px-10 gap-5 flex flex-col items-start justify-start"
-   >
-    <span class="text-7 text-shadow-[1px_1px_3px_#fecada]"
-     >Weekly giveaways</span
-    >
-    <p class="text-5">
-     Reach level 5 and enter our weekly lotteries for Steam games and Discord
-     Nitro!
-    </p>
-   </div>
-   <div
-    class="h-300px w-[var(--slide-width)] px-10 gap-5 flex flex-col items-start justify-start"
-   >
-    <span class="text-7 text-shadow-[1px_1px_3px_#fecada]">Earn Nitro</span>
-    <p class="text-5">
-     After reaching a certain level you will be rewarded with yearly Nitro
-     subscriptions
-    </p>
-   </div>
-   <div
-    class="h-300px w-[var(--slide-width)] px-10 gap-5 flex flex-col items-start justify-start"
-   >
-    <span class="text-7 text-shadow-[1px_1px_3px_#fecada]"
-     >440+ Nitro Emojis</span
-    >
-    <p class="text-5">
-     Express yourself with our massive collection of emojis
-    </p>
-   </div>
-   <div
-    class="h-300px w-[var(--slide-width)] px-10 gap-5 flex flex-col items-start justify-start"
-   >
-    <span class="text-7 text-shadow-[1px_1px_3px_#fecada]"
-     >60 Nitro Stickers</span
-    >
-    <p class="text-5">
-     Cute little stickers featuring Kemonomimi-chan, Ayako and other adorable
-     characters
-    </p>
-   </div>
+     servers!`
+   />
+   <Card
+    title="Weekly giveaways"
+    description=`Reach level 5 and enter our weekly lotteries for Steam games and Discord Nitro!`
+   />
+   <Card
+    title="Earn Nitro"
+    description=`After reaching a certain level you will be rewarded with yearly Nitro subscriptions`
+   />
+   <Card
+    title="440+ Nitro Emojis"
+    description=`Express yourself with our massive collection of emojis`
+   />
+   <Card
+    title="60 Nitro Stickers"
+    description=`Cute little stickers featuring Kemonomimi-chan, Ayako and other adorable characters`
+   />
+
+   <Card
+    title="Cozy Society Network"
+    description=`We're part of the Cozy Society Network, which means you get access to
+    competitions and events with monetary prizes hosted across our network of
+    servers!`
+   />
+   <Card
+    title="Weekly giveaways"
+    description=`Reach level 5 and enter our weekly lotteries for Steam games and Discord Nitro!`
+   />
+   <Card
+    title="Earn Nitro"
+    description=`After reaching a certain level you will be rewarded with yearly Nitro subscriptions`
+   />
+   <Card
+    title="440+ Nitro Emojis"
+    description=`Express yourself with our massive collection of emojis`
+   />
+   <Card
+    title="60 Nitro Stickers"
+    description=`Cute little stickers featuring Kemonomimi-chan, Ayako and other adorable characters`
+   />
   </div>
  </div>
+
+ <style>
+  :root {
+   --slide-width: 300px;
+   --slide-count: 10;
+  }
+
+  @media (min-width: 768px) {
+   :root {
+    --slide-width: 500px;
+   }
+  }
+
+  @keyframes scroll {
+   0% {
+    transform: translateX(0);
+   }
+   100% {
+    transform: translateX(
+     calc(calc(var(--slide-width) * -1) * (var(--slide-count) / 2))
+    );
+   }
+  }
+ </style>
 </section>

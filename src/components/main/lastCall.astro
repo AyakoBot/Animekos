@@ -73,7 +73,7 @@ import { Image } from "astro:assets";
  <a
   target="_blank"
   href="https://discord.gg/wjGas6FB"
-  class="text-6 z-100 inline-flex relative flex items-center justify-center hover:scale-105 transition-all duration-300 ease-in-out mt-20 lg:mt-10
+  class="text-6 z-100 inline-flex relative flex items-center justify-center hover:scale-105 transition-all duration-300 ease-in-out mt-20 lg:mt-10 mb-15
   after:content-empty after:h-full after:w-full after:rounded-full after:absolute after:bottom-0 after:z-99 after:animate-[gradient_8s_linear_infinite] after:filter-blur-1.5rem after:[background-image:conic-gradient(from_var(--angle),#ff2190,#fca4e5,#ffc2fb,#7aedff,#544aff,#ff2190)]"
   style="--angle: 0deg;"
  >
@@ -117,7 +117,7 @@ before:bg-gradient-to-r before:via-white before:from-[#fecada] before:to-[#fecad
   width="4096"
   height="4096"
   loading="eager"
-  class="color-[#fecada] animate-[flower-rotate_200s_linear_infinite_reverse] absolute w-20 h-auto bottom-1cm lg:bottom-0 right-[calc(50%+4cm)] rotate-20deg blur-10px"
+  class="color-[#fecada] animate-[flower-rotate_200s_linear_infinite_reverse] absolute w-20 h-auto bottom-1cm right-[calc(50%+4cm)] rotate-20deg blur-10px"
  />
  <Image
   src={Flower}
@@ -125,7 +125,7 @@ before:bg-gradient-to-r before:via-white before:from-[#fecada] before:to-[#fecad
   width="4096"
   height="4096"
   loading="eager"
-  class="color-[#fecada] animate-[flower-rotate_200s_linear_infinite_reverse] absolute w-20 h-auto bottom-1cm lg:bottom-0 right-[calc(50%+4cm)] rotate-20deg"
+  class="color-[#fecada] animate-[flower-rotate_200s_linear_infinite_reverse] absolute w-20 h-auto bottom-1cm right-[calc(50%+4cm)] rotate-20deg"
  />
  <Image
   src={Flower}
@@ -141,7 +141,7 @@ before:bg-gradient-to-r before:via-white before:from-[#fecada] before:to-[#fecad
   width="4096"
   height="4096"
   loading="eager"
-  class="color-[#fecada] animate-[flower-rotate_240s_linear_infinite] absolute w-13 h-auto right-[calc(50%+11.5cm)] bottom-20 rotate-15deg  hidden lg:block"
+  class="color-[#fecada] animate-[flower-rotate_240s_linear_infinite] absolute w-13 h-auto right-[calc(50%+11.5cm)] bottom-20 rotate-15deg hidden lg:block"
  />
  <Image
   src={Flower}
@@ -160,3 +160,34 @@ before:bg-gradient-to-r before:via-white before:from-[#fecada] before:to-[#fecad
   class="color-[#fecada] animate-[flower-rotate_180s_linear_infinite_reverse] absolute w-13 h-auto bottom-5 right-[calc(50%-4cm)] rotate-10deg"
  />
 </section>
+
+<style>
+ @keyframes topToBottom {
+  40% {
+   transform: translateY(-40px);
+   text-shadow: 0 0 0px #fecada;
+  }
+  45% {
+   transform: translateY(-40px);
+   opacity: 0;
+  }
+  47% {
+   opacity: 1;
+   transform: translateY(0px);
+   text-shadow: 0 0 5px #fecada;
+  }
+  53.3% {
+   opacity: 1;
+   transform: translateY(0px);
+   text-shadow: 0 0 5px #fecada;
+  }
+  55.3% {
+   opacity: 0;
+   transform: translateY(40px);
+  }
+  60.3% {
+   transform: translateY(40px);
+   text-shadow: 0 0 0px #fecada;
+  }
+ }
+</style>
