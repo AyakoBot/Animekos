@@ -3,15 +3,49 @@ import Style from "../components/style.astro";
 import Nav from "../components/nav.astro";
 import Footer from "../components/footer.astro";
 import EndGradient from "../components/endGradient.astro";
+
+import SitePreview from "../assets/preview.webp";
 ---
 
 <html lang="en">
  <head>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width" />
-  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="icon" type="image/x-icon" href="/favicon.ico" />
   <meta name="generator" content={Astro.generator} />
+
   <title>Animekos</title>
+  <meta
+   name="description"
+   content="Hi friend! 🌸 Join us and share what you've been up to lately! Play gachas, seek Ayako bot support, and win Steam games!"
+  />
+  <meta
+   name="keywords"
+   content="active,friendly,anime,art,gaming,nitro,giveaway,art,self-promote,waifu,currency,animekos,ayako"
+  />
+  <meta property="og:image" content={SitePreview.src} />
+
+  <!-- Twitter -->
+  <meta property="twitter:card" content={SitePreview.src} />
+  <meta property="twitter:url" content={Astro.site} />
+  <meta property="twitter:title" content="Animekos" />
+  <meta
+   property="twitter:description"
+   content="Hi friend! 🌸 Join us and share what you've been up to lately! Play gachas, seek Ayako bot support, and win Steam games!"
+  />
+  <meta property="twitter:image" content={SitePreview.src} />
+
+  <link
+   rel="apple-touch-icon"
+   type="image/png"
+   href="/favicon.png"
+   sizes="128x128"
+  />
+  <link rel="mask-icon" href="/favicon.webp" color="#fecada" />
+  <link rel="manifest" href="/site.webmanifest" />
+  <link rel="mask-icon" href="/favicon.webp" color="#fecada" />
+  <meta name="msapplication-TileColor" content="#fecada" />
+  <meta name="theme-color" content="#fecada" />
  </head>
  <body class="of-x-hidden flex flex-col max-w-100vw bg-[#18181b] color-white">
   <div class="font-['Weezer'] relative flex flex-col w-100vw">
