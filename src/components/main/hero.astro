@@ -4,12 +4,12 @@ import { Image } from "astro:assets";
 import Flower from "../../assets/flower.svg";
 
 const guild = await fetch(
- "https://discord.com/api/v10/invites/wjGas6FB?with_counts=true"
-).then((res) =>
- res.ok
-  ? res.json()
-  : { approximate_member_count: 67000, approximate_presence_count: 20000 }
-);
+ "https://api.ayakobot.com/guilds/298954459172700181/counts"
+).then(async (res) => {
+if (res.ok) return res.json();
+ return { memberCount: 67000, presenceCount: 20000 };
+});
+
 
 const splitByThousand = (num: number): string => {
  const str = Math.round(num).toString();
@@ -18,10 +18,8 @@ const splitByThousand = (num: number): string => {
  return `${splitByThousand(parseInt(str.slice(0, len - 3), 10))},${str.slice(len - 3)}`;
 };
 
-const online = splitByThousand(guild.approximate_presence_count);
-const members = splitByThousand(guild.approximate_member_count);
-
-console.log(online, members);
+const online = splitByThousand(guild.presenceCount);
+const members = splitByThousand(guild.memberCount);
 ---
 
 <section
