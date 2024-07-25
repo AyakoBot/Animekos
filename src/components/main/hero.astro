@@ -91,11 +91,11 @@ const members = splitByThousand(guild.memberCount);
   <div
    class="flex flex-row justify-evenly items-center gap-10 text-4 color-neutral-4 z-100 mt-5"
   >
-   <div>
-    <span class="text-3">🟢</span><span id="online">{online} online</span>
+   <div class="flex flex-row justify-center gap-1">
+    <div class="w-4 h-4 content-empty bg-[#23a55a] rounded-full mt-1"></div><span id="online">{online} online</span>
    </div>
-   <div>
-    <span class="text-3">⚫</span><span id="members">{members} members</span>
+   <div class="flex flex-row justify-center gap-1">
+    <div class="w-4 h-4 content-empty bg-[#80848e] rounded-full mt-1"></div><span id="members">{members} members</span>
    </div>
   </div>
 
