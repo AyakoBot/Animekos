@@ -2,16 +2,11 @@
  "name": "Animekos",
  "short_name": "AM",
  "icons": [
-     {
-         "src": "/favicon.png",
-         "sizes": "192x192",
-         "type": "image/png"
-     },
-     {
-         "src": "/favicon.png",
-         "sizes": "512x512",
-         "type": "image/png"
-     }
+  {
+   "src": "/favicon.png",
+   "sizes": "128x128",
+   "type": "image/png"
+  }
  ],
  "theme_color": "#fecada",
  "background_color": "#fecada",
