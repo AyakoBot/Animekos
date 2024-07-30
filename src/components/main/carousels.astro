@@ -125,8 +125,24 @@ import Card from "../card.astro"
 
  <style>
   :root {
-   --slide-width: 300px 
-   --slide-count: 10 min-w-768px) translate-x="0" translate-x="calc(calc(var(--slide-width" 
+   --slide-width: 300px;
+   --slide-count: 10;
+  }
+
+  @media (min-width: 768px) {
+   :root {
+    --slide-width: 500px;
+   }
+  }
+
+  @keyframes scroll {
+   0% {
+    transform: translateX(0);
+   }
+   100% {
+    transform: translateX(
+     calc(calc(var(--slide-width) * -1) * (var(--slide-count) / 2))
+    );
    }
   }
  </style>
