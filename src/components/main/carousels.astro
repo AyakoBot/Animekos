@@ -1,5 +1,5 @@
 ---
-import Card from "../card.astro";
+import Card from "../card.astro" 
 ---
 
 <section class="mx-0 color-[#fecada]">
@@ -12,25 +12,25 @@ import Card from "../card.astro";
    class="flex animate-[scroll_80s_linear_infinite] w-[calc(var(--slide-width)*var(--slide-count))]"
   >
    <Card
-    title="Active Chats"
-    description=`5,000 - 10,000 messages sent per day.
-   Members from 20+ countries.
-   Activity rewarded with Nitro & server perks.`
-   />
-   <Card
     title="Sharing art"
     description=`Promote your works and comissions.
      Advertise yourself as an artist.
      Look for feedback and help from our vast community and other artists.`
    />
    <Card
-    title="Gacha bots"
-    description=`Avtive Mudae community with half-yearly resets.
-   Other game bots include PokéTwo, Karuta, Waifugami, OwO and Sofi.`
-   />
-   <Card
     title="Grow your own community"
     description=`Reach level 5 and advertise your own server in our advertisements channel`
+   />
+   <Card
+    title="Active Chats"
+    description=`5,000 - 10,000 messages sent per day.
+   Members from 20+ countries.
+   Activity rewarded with Nitro & server perks.`
+   /> 
+   <Card
+    title="Gacha bots"
+    description=`Active Mudae community with half-yearly resets.
+   Other game bots include PokéTwo, Karuta, Waifugami, OwO and Sofi.`
    />
    <Card
     title="Ayako Support"
@@ -39,30 +39,30 @@ import Card from "../card.astro";
    />
 
    <Card
-    title="Active Chats"
-    description=`5,000 - 10,000 messages sent per day.
-  Members from 20+ countries.
-  Activity rewarded with Nitro & server perks.`
-   />
-   <Card
     title="Sharing art"
     description=`Promote your works and comissions.
-    Advertise yourself as an artist.
-    Look for feedback and help from our vast community and other artists.`
-   />
-   <Card
-    title="Gacha bots"
-    description=`Avtive Mudae community with half-yearly resets.
-  Other game bots include PokéTwo, Karuta, Waifugami, OwO and Sofi`
+     Advertise yourself as an artist.
+     Look for feedback and help from our vast community and other artists.`
    />
    <Card
     title="Grow your own community"
     description=`Reach level 5 and advertise your own server in our advertisements channel`
    />
    <Card
+    title="Active Chats"
+    description=`5,000 - 10,000 messages sent per day.
+   Members from 20+ countries.
+   Activity rewarded with Nitro & server perks.`
+   /> 
+   <Card
+    title="Gacha bots"
+    description=`Active Mudae community with half-yearly resets.
+   Other game bots include PokéTwo, Karuta, Waifugami, OwO and Sofi.`
+   />
+   <Card
     title="Ayako Support"
     description=`In case you need help with our globally available server mascot bot, Ayako.
-  You're in the right place`
+   You're in the right place`
    />
   </div>
  </div>
@@ -125,24 +125,8 @@ import Card from "../card.astro";
 
  <style>
   :root {
-   --slide-width: 300px;
-   --slide-count: 10;
-  }
-
-  @media (min-width: 768px) {
-   :root {
-    --slide-width: 500px;
-   }
-  }
-
-  @keyframes scroll {
-   0% {
-    transform: translateX(0);
-   }
-   100% {
-    transform: translateX(
-     calc(calc(var(--slide-width) * -1) * (var(--slide-count) / 2))
-    );
+   --slide-width: 300px 
+   --slide-count: 10 min-w-768px) translate-x="0" translate-x="calc(calc(var(--slide-width" 
    }
   }
  </style>
