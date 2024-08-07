@@ -4,7 +4,7 @@ import { Image } from "astro:assets";
 import Flower from "../../assets/flower.svg";
 
 const guild = await fetch(
- "https://api.ayakobot.com/guilds/298954459172700181/counts"
+ "https://api.ayakobot.com/v1/guilds/298954459172700181"
 ).then(async (res) => {
 if (res.ok) return res.json();
  return { memberCount: 67000, presenceCount: 20000 };
