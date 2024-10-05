@@ -14,7 +14,7 @@ import SitePreview from "../assets/preview.webp";
 		'Strict-Transport-Security',
 		'max-age=31536000; includeSubDomains; preload;',
 	);
-	Astro.response.headers.append('X-Frame-Options', 'DENY');
+	Astro.response.headers.append('X-Frame-Options', 'SAMEORIGIN');
 	Astro.response.headers.append('X-Content-Type-Options', 'nosniff');
 	Astro.response.headers.append('Referrer-Policy', 'strict-origin-when-cross-origin');
 	Astro.response.headers.append('Permissions-Policy', 'camera=(), microphone=(), document-domain=();');
