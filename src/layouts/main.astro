@@ -5,6 +5,19 @@ import Footer from "../components/footer.astro";
 import EndGradient from "../components/endGradient.astro";
 
 import SitePreview from "../assets/preview.webp";
+
+	Astro.response.headers.append(
+  'Content-Security-Policy', 
+  "default-src 'self'; script-src 'report-sample' 'self'; style-src 'report-sample' 'self'; object-src 'none'; base-uri 'self'; connect-src 'self'; font-src 'self'; frame-src 'self'; img-src 'self'; manifest-src 'self'; media-src 'self'; worker-src 'none';"
+ );
+	Astro.response.headers.append(
+		'Strict-Transport-Security',
+		'max-age=31536000; includeSubDomains; preload;',
+	);
+	Astro.response.headers.append('X-Frame-Options', 'DENY');
+	Astro.response.headers.append('X-Content-Type-Options', 'nosniff');
+	Astro.response.headers.append('Referrer-Policy', 'strict-origin-when-cross-origin');
+	Astro.response.headers.append('Permissions-Policy', 'camera=(), microphone=(), document-domain=();');
 ---
 
 <html lang="en">
